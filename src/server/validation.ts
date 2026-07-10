@@ -69,7 +69,6 @@ export const registerSchema = z.object({
     .string()
     .min(8, "Password must be at least 8 characters")
     .max(100),
-  code: z.string().trim().regex(/^\d{6}$/, "The code must be 6 digits"),
 });
 
 export const passwordLoginSchema = z.object({

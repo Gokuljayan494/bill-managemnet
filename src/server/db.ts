@@ -37,6 +37,23 @@ async function connect(): Promise<typeof mongoose> {
       serverSelectionTimeoutMS: 8000,
     });
   } catch (err) {
+    // Some local/ISP DNS resolvers refuse the SRV lookups that
+    // mongodb+srv:// URIs need. Retry once via public DNS.
+    if (err instanceof Error && /querySrv|ESERVFAIL|ENOTFOUND/.test(err.message)) {
+      console.warn(
+        "[db] DNS SRV lookup failed — retrying with public DNS (8.8.8.8 / 1.1.1.1)"
+      );
+      const dns = await import("dns");
+      dns.setServers(["8.8.8.8", "1.1.1.1"]);
+      try {
+        return await mongoose.connect(uri, {
+          dbName: "billforge",
+          serverSelectionTimeoutMS: 8000,
+        });
+      } catch (retryErr) {
+        err = retryErr;
+      }
+    }
     if (isProd) throw err;
     console.error(
       "[db] Could not reach MongoDB Atlas (is this IP whitelisted in Atlas → Network Access?).",
