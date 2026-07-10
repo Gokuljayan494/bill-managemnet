@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "BillForge — Billing & Bid Management",
+  title: "Reverse Store — Billing & Bid Management",
   description:
     "B2B & B2C billing software with product management, invoicing and procurement bid management.",
 };

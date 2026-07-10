@@ -83,7 +83,7 @@ export function RegisterForm() {
         </span>
         <div className="leading-tight">
           <p className="text-lg font-bold tracking-tight text-slate-900">
-            BillForge
+            Reverse Store
           </p>
           <p className="text-[10px] font-medium uppercase tracking-widest text-slate-400">
             Billing &amp; Bid Management

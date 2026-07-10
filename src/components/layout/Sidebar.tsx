@@ -34,7 +34,7 @@ export function Sidebar() {
         </span>
         <div className="leading-tight">
           <p className="text-sm font-bold tracking-tight text-slate-900">
-            BillForge
+            Reverse Store
           </p>
           <p className="text-[10px] font-medium uppercase tracking-wider text-slate-400">
             Billing &amp; Bids

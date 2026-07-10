@@ -17,11 +17,11 @@ async function sendEmail(to: string, code: string): Promise<boolean> {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      from: process.env.EMAIL_FROM ?? "BillForge <onboarding@resend.dev>",
+      from: process.env.EMAIL_FROM ?? "Reverse Store <onboarding@resend.dev>",
       to: [to],
-      subject: `${code} is your BillForge verification code`,
+      subject: `${code} is your Reverse Store verification code`,
       html: `<div style="font-family:sans-serif;max-width:400px;margin:0 auto">
-        <h2 style="color:#0e7553">BillForge</h2>
+        <h2 style="color:#0e7553">Reverse Store</h2>
         <p>Your verification code is:</p>
         <p style="font-size:32px;font-weight:bold;letter-spacing:8px">${code}</p>
         <p style="color:#64748b;font-size:13px">This code expires in 5 minutes. If you didn't request it, ignore this email.</p>

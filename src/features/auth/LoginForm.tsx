@@ -56,7 +56,7 @@ export function LoginForm() {
         </span>
         <div className="leading-tight">
           <p className="text-lg font-bold tracking-tight text-slate-900">
-            BillForge
+            Reverse Store
           </p>
           <p className="text-[10px] font-medium uppercase tracking-widest text-slate-400">
             Billing &amp; Bid Management
@@ -129,7 +129,7 @@ export function LoginForm() {
       </div>
 
       <p className="mt-6 text-center text-xs text-slate-400">
-        New to BillForge?{" "}
+        New to Reverse Store?{" "}
         <Link
           href="/register"
           className="font-medium text-brand-700 hover:underline"
